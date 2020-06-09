@@ -1,0 +1,28 @@
+* {
+  padding: 2px !important;
+  margin: 0px !important;
+  font-size: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.container-fluid {
+  padding: 0px;
+  margin: 0px;
+  height: 100vh;
+}
+
+.headers * {
+  text-align: center;
+}
+
+.editDiv {
+  /* width: 50%;
+  height: 50%;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0; */
+  background-color: rgb(155, 155, 156);
+}

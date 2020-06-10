@@ -8,11 +8,11 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const { firebaseConfig } = require('./Config');
 const saltRounds = 10;
+app.use(cors());
 
 
 firebase.initializeApp(firebaseConfig());
 
-app.use(cors());
 
 const checkUsers = async (body, users) => {
     const { user, password } = body;

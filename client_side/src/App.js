@@ -172,7 +172,7 @@ function App() {
     <Container fluid>
       {loggenIn ?
         <React.Fragment>
-          <DatePicker className="form-control" selected={monthDate} onChange={date => setMonthDate(date)} dateFormat="MM/yyyy" showMonthYearPicker />
+          <DatePicker className="form-control DatePickerClass" selected={monthDate} onChange={date => setMonthDate(date)} dateFormat="MM/yyyy" showMonthYearPicker />
           {editBtn && <EditRow editRow={editRow} setEditRow={setEditRow} handleSave={handleEditSave} handleDeleteRow={handleDeleteRow} />}
           <div dir="rtl" className="App">
             <Table rows={rows} handleEdit={handleEdit} monthDate={monthDate} newRow={newRow} setNewRow={setNewRow} handleSave={handleSave} totalAdditionalHours={totalAdditionalHours} />

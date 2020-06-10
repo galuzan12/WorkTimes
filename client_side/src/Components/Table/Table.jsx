@@ -6,15 +6,20 @@ import ReactHTMLTableToExcel from 'react-html-table-to-excel';
 function EditRow({ rows, handleEdit, newRow, monthDate, setNewRow, handleSave, totalAdditionalHours }) {
     return (
         <React.Fragment>
-            <ReactHTMLTableToExcel
-                id="test-table-xls-button"
-                className="download-table-xls-button"
-                table="table-to-xls"
-                filename="tablexls"
-                sheet="tablexls"
-                buttonText="הורד לאקסל"
-            />
-            <p>בשדות שעת כניסה/שעת יציאה/כמה נוספות יש להכניס 2 ספרות -> נקודותיים -> 2 ספרות</p>
+            <Row className="justify-content-center">
+                <Col md={3} xs={6}>
+                    <ReactHTMLTableToExcel
+                        id="test-table-xls-button"
+                        className="download-table-xls-button btnEnter rounded1"
+                        table="table-to-xls"
+                        filename="tablexls"
+                        sheet="tablexls"
+                        buttonText="הורד לאקסל"
+                    />
+                </Col>
+            </Row>
+            <p className="remark">***בשדות שעת כניסה/שעת יציאה/כמה נוספות יש להכניס 2 ספרות -> נקודותיים -> 2 ספרות</p>
+            <div className="tableDiv">
             <table id="table-to-xls" width="100%" border="1">
                 <thead>
                     <tr>
@@ -39,7 +44,7 @@ function EditRow({ rows, handleEdit, newRow, monthDate, setNewRow, handleSave, t
                             <td>{row.needed}</td>
                             <td>{row.additional}</td>
                             <td>{row.remarks}</td>
-                            <td><button onClick={handleEdit} className="btn btn-primary btn-block">עריכה</button></td>
+                            <td><button onClick={handleEdit} className="btn btn-block btnTable">עריכה</button></td>
                         </tr> : null
                     )}
                     {newRow.state ?
@@ -52,12 +57,12 @@ function EditRow({ rows, handleEdit, newRow, monthDate, setNewRow, handleSave, t
                             <td> <input type="text" readOnly={true} className="form-control" value={newRow.additional} /> </td>
                             <td> <input type="text" onChange={e => setNewRow({ ...newRow, remarks: e.target.value })} className="form-control" value={newRow.remarks} /> </td>
                             <td>
-                                <button onClick={e => setNewRow({ ...newRow, state: false })} className="btn btn-primary btn-block">ביטול</button>
-                                <button onClick={handleSave} className="btn btn-primary btn-block">שמירה</button>
+                                <button onClick={e => setNewRow({ ...newRow, state: false })} className="btn btn-block btnCancel">ביטול</button>
+                                <button onClick={handleSave} className="btn btn-block btnTable">שמירה</button>
                             </td>
                         </tr> :
                         <tr>
-                            <td><button onClick={e => setNewRow({ ...newRow, state: true })} className="btn btn-primary btn-block">הוסף שורה</button></td>
+                            <td><button onClick={e => setNewRow({ ...newRow, state: true })} className="btn btn-block btnTable">הוסף שורה</button></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -69,6 +74,7 @@ function EditRow({ rows, handleEdit, newRow, monthDate, setNewRow, handleSave, t
                     }
                 </tbody>
             </table >
+            </div>
         </React.Fragment>
     );
 }

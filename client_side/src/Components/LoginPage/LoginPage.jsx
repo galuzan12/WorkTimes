@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Row, Col } from 'react-bootstrap';
-
+import '../../style/style.css';
 function LoginPage({ user, setUser, setLoggedIn }) {
 
     const [prod, dev] = ['https://timesforworks.herokuapp.com', 'http://localhost:5000']
@@ -34,22 +34,25 @@ function LoginPage({ user, setUser, setLoggedIn }) {
 
     return (
         <React.Fragment>
-            <Row className=" d-flex justify-content-center justify-content-center">
-                <Col xs={12}>
-                    <Col xs={12}>
-                        <input type="text" className="form-control" placeholder="הכנס שם משתמש" value={user.user || ''} onChange={e => setUser({ ...user, user: e.target.value })} />
+            <Row className="d-flex align-items-center justify-content-center" style={{ height: '100vh' }}>
+                <Col md={6}>
+                    <Col xs={12} className="headLineLogin">
+                        מערכת נוכחות
                     </Col>
                     <Col xs={12}>
-                        <input type="password" className="form-control" placeholder="הכנס סיסמה" value={user.password || ''} onChange={e => setUser({ ...user, password: e.target.value })} />
+                        <input type="text" className="form-control rounded1 inputEnter" placeholder="הכנס שם משתמש" value={user.user || ''} onChange={e => setUser({ ...user, user: e.target.value })} />
+                    </Col>
+                    <Col xs={12}>
+                        <input type="password" className="form-control rounded1 inputEnter" placeholder="הכנס סיסמה" value={user.password || ''} onChange={e => setUser({ ...user, password: e.target.value })} />
                     </Col>
                     <Col xs={12}>
                         {err}
                     </Col>
                     <Col xs={12}>
-                        <input type="button" onClick={handleSubmit} value={login ? "כניסה" : "הרשמה"} className="btn btn-primary btn-block" />
+                        <input type="button" onClick={handleSubmit} value={login ? "כניסה" : "הרשמה"} className="btn btn-block rounded1 btnEnter" />
                     </Col>
                     <Col xs={12}>
-                        <input type="button" onClick={e => setLogin(!login)} value={login ? "הרשמה" : "כניסה"} className="btn btn-primary btn-block" />
+                        <input type="button" onClick={e => setLogin(!login)} value={login ? "הרשמה" : "כניסה"} className="btn btn-block rounded1 btnEnter" />
                     </Col>
                 </Col>
             </Row>

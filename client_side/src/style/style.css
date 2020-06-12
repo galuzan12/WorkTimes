@@ -1,0 +1,60 @@
+/**** Login ****/
+.rounded1{
+    border-radius: 120px !important;
+}
+.inputEnter{
+  border: none !important;
+  /* box-shadow: 2px 2px rgb(145, 144, 144); */
+  margin-bottom: 2% !important;
+  background-color: rgba(183, 202, 243, 0.74) !important;
+
+}
+.btnEnter{
+    border: none !important;
+    box-shadow: 2px 2px rgb(78, 105, 163);
+    margin-bottom: 2% !important;
+    background-color: rgb(183, 202, 243) !important;
+}
+.headLineLogin{
+    font-family: Guttman Mantova-Decor, Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 250%;
+    font-weight: 600;
+    color: rgb(183, 202, 243);
+   
+}
+
+/**** Table ****/
+
+.download-table-xls-button{
+    width: 100%;
+    margin: 2% 0 4% 0 !important;
+}
+.remark{
+    color: rgb(255, 202, 211);
+}
+.btnTable{
+    border-radius: 0 !important;
+    border: none;
+    background-color: powderblue !important;
+}
+.btnCancel{
+    border-radius: 0 !important;
+    border: none;
+    background-color: rgb(195, 209, 211) !important;
+}
+td input{
+    border: none !important;
+    background-color: transparent !important;
+}
+th{
+    padding: 2px;
+}
+.tableDiv{
+    overflow-x:auto
+}
+.DatePickerClass{
+    margin: 2% 0 !important;
+    /* border: none !important; */
+    border-radius: 120px !important;
+    border: 2px solid rgba(220, 220, 220, 0.747) !important;
+}
